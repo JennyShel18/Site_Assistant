@@ -1,0 +1,35 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %}
+Регистрация
+{% endblock %}
+{% block cssjs %}
+<link rel="stylesheet" href="{% static 'css/register.css' %}">
+<script src ="{% static 'js/index.js' %}"></script>
+{% endblock %}
+{% block content %}
+      <form action="/action_page.php">
+        <div class="container">
+          <h1>Регистриация</h1>
+          <p>Пожалуйста, заполните форму, чтобы создать аккаунт:</p>
+          <hr>
+      
+          <label for="email"><b>Email</b></label>
+          <input type="text" placeholder="Введите Email" name="email" id="email" required>
+      
+          <label for="psw"><b>Пароль</b></label>
+          <input type="password" placeholder="Введите пароль" name="psw" id="psw" required>
+      
+          <label for="psw-repeat"><b>Повторите пароль</b></label>
+          <input type="password" placeholder="Повторите пароль" name="psw-repeat" id="psw-repeat" required>
+          <hr>
+          <p>Создавая свой аккаунт, Вы соглашаетесь с<a href="#"> правилами и условиями конфедициальности</a>.</p>
+      
+          <button type="submit" class="registerbtn">Зарегистрироваться</button>
+        </div>
+        
+        <div class="container signin">
+          <p>Уже есть аккаунт? <a href="#">Войти</a>.</p>
+        </div>
+      </form>
+{% endblock %}

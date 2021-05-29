@@ -1,38 +1,39 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
  <head>
   <meta charset="utf-8" />
-  <title>HTML5</title>
-  <link rel="stylesheet" href="css/base.css">
+  <title>{% block title %} {% endblock %}</title>
+  <link rel="stylesheet" href="{% static 'css/base.css' %}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script src ="js/base.js"></script>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap" rel="stylesheet">
+     {% block cssjs %} {% endblock %}
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src ="{% static 'js/base.js' %}"></script>
  </head>
  <body>
     <div class="topnav">
       <div id="myLinks">
-        <a class="active" href="index.html">Главная</a>
-        <a href="product.html">Продукт</a>
-        <a href="doc.html">Документация</a>
-        <a id="login" href="doc.html">Войти</a>
+        <a class="active" href="{% url 'home' %}">Главная</a>
+        <a href="{% url 'product' %}">Продукт</a>
+        <a id="login" href="#" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Войти</a>
       </div>
-        
       <a href="javascript:void(0);" class="icon" onclick="myFunction()">
         <i class="fa fa-bars"></i>
       </a>
     </div>
     <div id="myLinks2">
-      <a class="active" href="index.html">Главная</a>
-      <a href="product.html">Продукт</a>
-      <a href="doc.html">Документация</a>
-      <a id="login" href="doc.html">Войти</a>
+      <a class="active" href="{% url 'home' %}">Главная</a>
+      <a href="{% url 'product' %}">Продукт</a>
+      <a id="login" href="#" onclick="document.getElementById('id01').style.display='block';if(document.getElementById('myLinks2').style.display=='block') document.getElementById('myLinks2').style.display='none'" style="width:auto;">Войти</a>
     </div>
-    
+    {% block content %} {% endblock %}
     <div id="id01" class="modal">
-  
         <form class="modal-content animate" action="/action_page.php" method="post">
           <div class="imgcontainer">
             <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-            <img src="img/1.jpg" alt="Avatar" class="avatar">
+            <img src="{% static 'img/1.jpg' %}" alt="Avatar" class="avatar">
           </div>
       
           <div class="container">
@@ -50,13 +51,11 @@
       
           <div class="container" style="background-color:#f1f1f1">
             <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Отмена</button>
-            <span class="psw">Нет аккаунта? Вы можете <a href="register.html">зарегистрироваться</a></span>
+            <span class="psw">Нет аккаунта? Вы можете <a href="{% url 'register' %}">зарегистрироваться</a></span>
           </div>
         </form>
       </div>
 
 
- </body>
-</html>
  </body>
 </html>
