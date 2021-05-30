@@ -13,11 +13,20 @@
   <script src ="{% static 'js/base.js' %}"></script>
  </head>
  <body>
+ {% if user.is_authenticated %}
+ <a>{{ user.username }}</a>
+{% else %}
+    <p>Welcome, new user. Please log in.</p>
+{% endif %}
     <div class="topnav">
       <div id="myLinks">
         <a class="active" href="{% url 'home' %}">Главная</a>
         <a href="{% url 'product' %}">Продукт</a>
-        <a id="login" href="#" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Войти</a>
+        {% if user.is_authenticated %}
+                    <a href="{% url 'logout' %}" style="width:auto; right:0">Выйти</a>
+            {% else %}
+                  <a id="login" href="#" onclick="document.getElementById('id01').style.display='block';if(document.getElementById('myLinks2').style.display=='block') document.getElementById('myLinks2').style.display='none'" style="width:auto;">Войти</a>
+            {% endif %}
       </div>
       <a href="javascript:void(0);" class="icon" onclick="myFunction()">
         <i class="fa fa-bars"></i>
@@ -26,22 +35,35 @@
     <div id="myLinks2">
       <a class="active" href="{% url 'home' %}">Главная</a>
       <a href="{% url 'product' %}">Продукт</a>
-      <a id="login" href="#" onclick="document.getElementById('id01').style.display='block';if(document.getElementById('myLinks2').style.display=='block') document.getElementById('myLinks2').style.display='none'" style="width:auto;">Войти</a>
+
+          {% if user.is_authenticated %}
+                    <a href="{% url 'logout' %}">Выйти</a>
+            {% else %}
+                  <a id="login" href="#" onclick="document.getElementById('id01').style.display='block';if(document.getElementById('myLinks2').style.display=='block') document.getElementById('myLinks2').style.display='none'" style="width:auto;">Войти</a>
+            {% endif %}
+
     </div>
     {% block content %} {% endblock %}
     <div id="id01" class="modal">
-        <form class="modal-content animate" action="/action_page.php" method="post">
+        <form class="modal-content animate"  method="post">
           <div class="imgcontainer">
             <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
             <img src="{% static 'img/1.jpg' %}" alt="Avatar" class="avatar">
           </div>
       
           <div class="container">
-            <label for="uname"><b>Email</b></label>
-            <input type="text" placeholder="Введите Email" name="uname" required>
+              {% csrf_token %}
+<!--
+          <label for="username"><b>Логин</b></label>
+            {{ form.username }}<br>
+          <label for="psw"><b>Пароль</b></label>
+            {{ form.password }}<br>-->
+
+            <label for="username"><b>Email</b></label>
+            <input type="text" placeholder="Введите Email" name="username" required>
       
-            <label for="psw"><b>Пароль</b></label>
-            <input type="password" placeholder="Введите пароль" name="psw" required>
+            <label for="password"><b>Пароль</b></label>
+            <input type="password" placeholder="Введите пароль" name="password" required>
               
             <button type="submit">Войти</button>
             <label>

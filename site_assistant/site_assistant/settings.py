@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-!0)^2y9l(xk)m-#%7s(k2g!&gsiesym3gh5yo$2ttzhk6pr&o0
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
+#AUTH_USER_MODEL = 'main.User'
 
 # Application definition
 
@@ -100,7 +100,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
+LOGIN_URL=""
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
