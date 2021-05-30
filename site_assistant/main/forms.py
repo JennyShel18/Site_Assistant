@@ -1,6 +1,7 @@
 # from .models import UserA
 from django.contrib.auth.models import User
-from django.forms import ModelForm, TextInput,Form
+from django.forms import ModelForm, TextInput,Form,PasswordInput
+
 
 class UserForm(ModelForm):
     class Meta:
@@ -16,7 +17,7 @@ class UserForm(ModelForm):
             "email": TextInput(attrs={
                 'placeholder': 'Введите email'
             }),
-            "password": TextInput(attrs={
+            "password": PasswordInput(attrs={
                 'placeholder': 'Введите пароль'
             }),
         }

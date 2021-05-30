@@ -4,6 +4,8 @@ from .forms import UserForm
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
+from django.contrib.auth.hashers import make_password
+from django.contrib.auth.models import User
 
 
 
@@ -59,12 +61,34 @@ def index(request):
 #     }
 #     return render(request,'main/index.html',context)
 
+# def registr(request):
+#     error=''
+#     if request.method == 'POST':
+#         form=UserForm(request.POST)
+#         if form.is_valid():
+#             form.save()
+#             return redirect('home')
+#         else:
+#             error="Неверно введены данные"
+#
+#     form = UserForm()
+#     context = {
+#         'form':form,
+#         'error':error
+#     }
+#     return render(request,'main/register.html',context)
+
 def registr(request):
     error=''
     if request.method == 'POST':
         form=UserForm(request.POST)
         if form.is_valid():
-            form.save()
+            # Create a new user object but avoid saving it yet
+            new_user = form.save(commit=False)
+            # Set the chosen password
+            new_user.set_password(form.cleaned_data['password'])
+            # Save the User object
+            new_user.save()
             return redirect('home')
         else:
             error="Неверно введены данные"
@@ -76,6 +100,6 @@ def registr(request):
     }
     return render(request,'main/register.html',context)
 
-@login_required
+@login_required(login_url='home')
 def product(request):
     return render(request,'main/product.html')
