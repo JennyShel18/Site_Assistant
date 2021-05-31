@@ -93,6 +93,16 @@ def registr(request):
         else:
             error="Неверно введены данные"
 
+        if request.method == 'POST' and not form.is_valid():
+            username = request.POST['username']
+            password = request.POST['password']
+            user = authenticate(request, username=username, password=password)
+            if user is not None:
+                login(request, user)
+                return redirect('product')
+            else:
+                error = "Неверно введены данные"
+
     form = UserForm()
     context = {
         'form':form,

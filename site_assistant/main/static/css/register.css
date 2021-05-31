@@ -1,11 +1,13 @@
 .container {
     padding: 16px;
-    width: 50%;
+    width: 80%;
     margin: auto;
     font-family: 'Raleway', sans-serif;
 }
 form {
-  background-color: white;
+  background-color: #ffffff7a;
+  width: 70%;
+  margin: auto;
 }
 form h1 {
   text-align: center;
