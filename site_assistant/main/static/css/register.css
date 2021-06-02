@@ -1,13 +1,15 @@
-.container {
+.container2 {
     padding: 16px;
     width: 80%;
     margin: auto;
     font-family: 'Raleway', sans-serif;
+    margin-bottom:10px;
 }
 form {
   background-color: #ffffff7a;
   width: 70%;
   margin: auto;
+  margin-top:10px;
 }
 form h1 {
   text-align: center;
@@ -22,7 +24,29 @@ form hr {
 }
 @media screen and (max-width: 920px) {
     
-   .container {
+   .container2 {
      width: 80%;
    }
+   }
+@media screen and (max-width: 384px) {
+form h1 {
+    font-size:17px;
+}
+form {
+    width:95%;
+}
+input[type=text], input[type=password] {
+    font-size:15px
+}
+button {
+    font-size:13px;
+    padding: 8px 8px;
+    margin: auto;
+
+}
+.container2 {
+    padding:0px;
+    padding-top:15px;
+    padding-bottom:15px;
+}
   }

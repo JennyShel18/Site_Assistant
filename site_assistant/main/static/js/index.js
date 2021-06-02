@@ -12,6 +12,7 @@ logoutLink = document.getElementById("login");
   logoutLink.addEventListener("click", function(event) {
     modal.style.display = "block";
     event.preventDefault();
+
   });
 
   var scrollHeight = Math.max(

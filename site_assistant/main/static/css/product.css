@@ -1,13 +1,19 @@
 .pr-about{
 /* width: 600px; */
-height: 400px;
+height: auto;
 /* background-color: aliceblue; */
 margin-top: 10px;
 margin: auto;
 font-family: 'Raleway', sans-serif;
+color:white;
+}
+.pr-about h1 {
+    text-align:center;
 }
 .mainwin {
   padding: 40px;
+    width: 70%;
+    margin: auto;
 }
 table {
     border-collapse: collapse;
@@ -16,8 +22,9 @@ table {
     margin: auto;
     border: 1px solid #ddd;
     margin-top: 15px;
-    background-color: #0089ff47;
+    background-color: #00ffdc1c;
     font-family: 'Raleway', sans-serif;
+    margin-bottom:10px;
   }
   
   th, td {
@@ -31,12 +38,19 @@ table {
   @media screen and (max-width: 490px) {
     .mainwin {
       padding: 0px;
+      width: 95%;
     }
     table {
-      font-size: 10px;
+      font-size: 12px;
     }
     th {
       padding-left: 3px;
       padding-right: 3px;
     }
+    td {
+        padding:2px;
+    }
+    .pr-about h1 {
+    font-size:20px;
+}
   }

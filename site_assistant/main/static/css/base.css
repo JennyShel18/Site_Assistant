@@ -14,6 +14,7 @@ body {
     margin-right: -10px;
     height: 48px;
   }
+
 .userp {
     position: absolute;
     top: 24px;
@@ -81,7 +82,18 @@ body {
     /* margin-left: -8px;
     margin-right: -8px; */
     transition: 0.5s;
+    margin-top: 10px;
   }
+  .sec4 {
+  background-color: #000;
+  /* width: 100%; */
+  /*height: 60px;*/
+  margin-left: -8px;
+  margin-right: -8px;
+  margin-bottom: -8px;
+  font-size: 15px;
+  padding: 6px;
+}
   #myLinks2 a {
     color: white;
     padding: 14px 16px;
@@ -99,6 +111,10 @@ body {
     background-color:#9c0940;
     color: white;
   }
+  #bot {
+  height:120px;
+  }
+
 
 @media screen and (max-width: 600px) {
   .topnav a.icon {
@@ -254,4 +270,10 @@ span.psw {
   #myLinks2 {
     margin-bottom: 30px;
   }
-} 
+}
+
+@media screen and (max-width: 353px) {
+    .sec4 {
+  font-size: 13px;
+  }
+}

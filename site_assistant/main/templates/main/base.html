@@ -48,6 +48,13 @@
 
     </div>
     {% block content %} {% endblock %}
+    <div class="sec4">
+<a style="color:white; margin-top: 10px;">Разработчик: Щелкунова Евгения Сергеевна</a><br>
+  <a style="color:white; margin-top: 10px;">Россия, г. Кострома</a><br>
+   <a style="color:white; margin-top: 10px;">Email: jenny.schelkunova@gmail.com</a><br>
+</div>
+
+
     <div id="id01" class="modal">
         <form class="modal-content animate"  method="post">
           <div class="imgcontainer">
@@ -75,7 +82,7 @@
             </label>
           </div>
       
-          <div class="container" style="background-color:#f1f1f1">
+          <div class="container" id="bot" style="background-color:#f1f1f1">
             <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Отмена</button>
             <span class="psw">Нет аккаунта? Вы можете <a href="{% url 'register' %}">зарегистрироваться</a></span>
           </div>
