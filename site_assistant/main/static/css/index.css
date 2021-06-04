@@ -210,6 +210,14 @@
 .flip-box-back {
   transform: rotateX(180deg);
   background-color: #f3ebee;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flip-box-back a {
+  font-size: 18px;
 }
 
 .flexcont {
@@ -324,7 +332,7 @@ hr {
   z-index: 99; /* Make sure it does not overlap */
   border: none; /* Remove borders */
   outline: none; /* Remove outline */
-  background-color: #4ca1af; /* Set a background color */
+  background-color: #9c0940;/* Set a background color */
   color: white; /* Text color */
   cursor: pointer; /* Add a mouse pointer on hover */
   padding: 15px; /* Some padding */
@@ -453,6 +461,9 @@ h1 {
     width: 200px;
     height: 200px;
   }
+  .flip-box-back a {
+    font-size: 16px;
+  }
   .pict img {
     width: 420px;
   }
@@ -472,13 +483,19 @@ font-size: 20px;
   .flexcont {
     margin-bottom: 7px;
   }
-  
+  .flip-box-back a {
+    font-size: 13px;
+  }
+  .flip-box-back {
+    padding: 0px;
+  }
   .pict img {
     width: 280px;
   }
 .pict {
   width: 280px;
 }
+
 .ic1 {
   margin-top: 25px;
   max-width: 50px;
@@ -498,6 +515,9 @@ h2 {
   }
   .flexcont {
     margin-bottom: 2px;
+  }
+  .flip-box-back a {
+    display: none;
   }
   .pict img {
     width: 152px;
@@ -539,6 +559,12 @@ font-size: 20px;
   width: 320px;
   height: 250px;
   padding: 20px;
+  display: flex;
+  
+    align-items: center;
+    flex-flow: column;
+    text-align: center;
+    align-items: center;
   /* background: repeating-linear-gradient( 
 -45deg
 , #ffe5f7 0, #ffb8f0 2px, transparent 1px, transparent 8px); */
@@ -574,13 +600,14 @@ font-size: 20px;
     margin-left: 250px;
     width: 250px;
     height: 180px;
+    padding: 15px;
+  }
+  .rect3 a {
+  font-size: 13px;
   }
   .rect3 h2{
     margin-top: -7px;
     font-size: 18px;
-  }
-  .rect3 a {
-    font-size: 14px;
   }
   .sec3 {
     height: 450px;
@@ -621,7 +648,10 @@ font-size: 20px;
   }
   .rect3 h2 {
     font-size: 13.5px;
-    margin-top: 25px;
+    margin-top: 20px;
+  }
+  #myBtn {
+    right: 8px;
   }
   
 }
@@ -633,7 +663,7 @@ font-size: 20px;
   width: 350px;
 }
 .mainwin {
-  height: 250px;
+  height: auto;
   margin-left: 0px;
   justify-content: center;
 }
